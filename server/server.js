@@ -6,7 +6,7 @@ var db = mysql.createConnection({
     host: 'localhost',
     user: 'root',
     database: 'shop',
-    password: '2244'
+    password: ''
 })
 
 // Log any errors connected to the db
