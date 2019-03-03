@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+<head>
+    <title>Testing socket.io</title>
+    <meta http-equiv="Access-Control-Allow-Origin" content="*">
+</head>
+<body>
+<div id="display"></div>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="public/socket.io.js"></script>
+<script>
+    var socket = io.connect('http://localhost:3003');
+    socket.on('connect', function () {
+        console.log('connected');
+    });
+    socket.on('echo', function (rows) {
+        var html = JSON.stringify(rows);
+        console.log('socket on');
+        document.getElementById("display").innerHTML = html;
+        //console.log(rows);
+    });
+</script>
+</body>
+</html>
